@@ -1,2 +1,105 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+    .turbolinks-progress-bar
+    {position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: #0076ff;
+    z-index: 9999;
+    transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
+    transform: translate3d(0, 0, 0);}
+    </style>
+    <link rel="stylesheet" media="all" href="/assets/  .css" data-turbolinks-track="reload">
+    <script src="/assets/application-" data-turbolinks-track="reload"></script>
+    <title>Bookers</title>
+    <meta name="csrf-param" content="authenticity_token">
+    <meta name="csrf-token" content="07lVM1ymN/9c3yxkxsylZbFbR3JYD6YHertLGLAPtFkYMqwDClfej79oabNuvUgwaNEnSmCDviFw/poyw7nKow==">
+  </head>
+
+<body>
+    <p id="notice"></p>
+    <h1>Books</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Body</th>
+                <th colspan="3"></th>
+            </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>リーダブルコード</td>
+                <td>より良いコードを書くためのシンプルで実践的なテクニック</td>
+                <td><a class="show_" href="/books/149802">Show</a></td>
+                <td><a class="edit_" href="/books/149802/edit">Edit</a></td>
+                <td><a data-confirm="Are you sure?" class="destroy_149802" rel="nofollow" data-method="delete" href="/books/149802">Destroy</a></td>
+            </tr>
+            <tr>
+                <td>トラブル知らずのシステム設計</td>
+                <td>システム設計の要点を図解で説明してくれます</td>
+                <td><a class="show_" href="/books/149803">Show</a></td>
+                <td><a class="edit_" href="/books/149803/edit">Edit</a></td>
+                <td><a data-confirm="Are you sure?" class="destroy_149803" rel="nofollow" data-method="delete" href="/books/149803">Destroy</a></td>
+            </tr>
+            <tr>
+                <td>たのしいRuby</td>
+                <td>Rubyの入門におすすめです</td>
+                <td><a class="show_149804" href="/books/149804">Show</a></td>
+                <td><a class="edit_149804" href="/books/149804/edit">Edit</a></td>
+                <td><a data-confirm="Are you sure?" class="destroy_149804" rel="nofollow" data-method="delete" href="/books/149804">Destroy</a></td>
+            </tr>
+            <tr>
+                <td>入門Git</td>
+                <td>gitについての基本操作から内部構造まで解説してくれます</td>
+                <td><a class="show_149805" href="/books/149805">Show</a></td>
+                <td><a class="edit_149805" href="/books/149805/edit">Edit</a></td>
+                <td><a data-confirm="Are you sure?" class="destroy_149805" rel="nofollow" data-method="delete" href="/books/149805">Destroy</a></td>
+            </tr>
+            <tr>
+                <td>アルゴリズム図鑑</td>
+                <td>アルゴリズムについてカラーイラストでしっかり解説してくれます</td>
+                <td><a class="show_149806" href="/books/149806">Show</a></td>
+                <td><a class="edit_149806" href="/books/149806/edit">Edit</a></td>
+                <td><a data-confirm="Are you sure?" class="destroy_149806" rel="nofollow" data-method="delete" href="/books/149806">Destroy</a></td>
+            </tr>
+            <tr>
+                <td>達人プログラマー</td>
+                <td>プログラマ入門者は必読！</td>
+                <td><a class="show_149807" href="/books/149807">Show</a></td>
+                <td><a class="edit_149807" href="/books/149807/edit">Edit</a></td>
+                <td><a data-confirm="Are you sure?" class="destroy_149807" rel="nofollow" data-method="delete" href="/books/149807">Destroy</a></td>
+            </tr>
+            <tr>
+                <td>データベース実践入門</td>
+                <td>効率的なSQL文を教えてくれます</td>
+                <td><a class="show_149808" href="/books/149808">Show</a></td>
+                <td><a class="edit_149808" href="/books/149808/edit">Edit</a></td>
+                <td><a data-confirm="Are you sure?" class="destroy_149808" rel="nofollow" data-method="delete" href="/books/149808">Destroy</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>New book</h2>
+
+
+<!-- form_with部分 -->
+<%= form_with model: Book.new do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+
+  <h4>Body</h4>
+  <%= f.text_area :body %>
+
+  <%= f.submit 'Create Book' %>
+<% end %>
+
+
+</body>
+</html>
+
+
+
