@@ -4,7 +4,6 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     if @book.save
       flash[:notice] = "Book was successfully created."
-      flash[:notice] = "Book was successfully updated."
       redirect_to book_path(@book.id)
     else
       @books = Book.all
@@ -28,15 +27,13 @@ class BooksController < ApplicationController
    def update
     book = Book.find(params[:id])
     book.update(book_params)
+    flash[:notice] = "Book was successfully updated."
     redirect_to books_path(book.id)
   end
 
   def destroy
     book = Book.find(params[:id])
     book.destroy
-     flash[:alert] = "2 errors prohibited this book from being saved:"
-     flash[:alert] = "Title can't be blank"
-     flash[:alert] = "Body can't be blank"
     redirect_to '/books'
   end
 
