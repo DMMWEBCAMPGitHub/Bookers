@@ -1,38 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <style type="text/css">
-        .turbolinks-progress-bar {
-        position: fixed;
-        display: block;
-        top: 0;
-        left: 0;
-        height: 3px;
-        background: #0076ff;
-        z-index: 9999;
-        transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
-        transform: translate3d(0, 0, 0);}
-    </style>
-        <link rel="stylesheet" media="all" href="/assets/application-d12397cbc3a266ce5a99f7b588223090c55ca04a439953bb5f9304395de93fc3.css" data-turbolinks-track="reload">
-        <script src="/assets/application-114264dd93c8ff30e4335b71eed7949d66c4e7a8eb62e2de6284c046fe07104b.js" data-turbolinks-track="reload"></script>
-        <title>Bookers</title>
-        <meta name="csrf-param" content="authenticity_token">
-        <meta name="csrf-token" content="bW1qrR2DVlNlFpcnTLIu9+zlK40ORuVnusWFKSLCn/em5pOdS3K/I4ah0vDkw8OiNW9LtTbK/UGwgFQDUXThDQ==">
-    </head>
-    <body>    
-        <p id="notice"></p>
-        <p>
-        <strong>Title:</strong>
-        リーダブルコード
-        </p>
-        <p>
-        <strong>Body:</strong>
-        より良いコードを書くためのシンプルで実践的なテクニック
-        </p>
-        <a class="edit_149834" href="/books/149834/edit">Edit</a>
-         |
-        <a class="back" href="/books">Back</a>
-    </body>
-</html>    
-        
-    
+<div>
+  <%= flash[:notice] %>
+</div>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @book.body %>
+</p>
+
+
+<span><%= link_to 'Edit', edit_book_path(@book) %></span>
+<span>|</span>
+<span><%= link_to "Back", books_path %></span>
