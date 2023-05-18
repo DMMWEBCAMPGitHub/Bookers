@@ -28,8 +28,9 @@
 
 <% if @book.errors.any? %>
   <div class = "alert">
+    <p><%= @book.errors.count %>errors prohibited this book from being saved:</p>
     <ul>
-      <% @book.errors.full_messages.each do |message| %>
+            <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
